@@ -1,0 +1,435 @@
+        @font-face {
+            font-family: "mochiy_pop_one";
+            src: url("./font/Mochiy_Pop_One/MochiyPopOne-Regular.ttf");
+        }   
+        @font-face {
+            font-family: "hachi_maru_pop";
+            src: url("./font/Hachi_Maru_Pop/HachiMaruPop-Regular.ttf");
+        }
+    
+        .ctr-wrapper::-webkit-scrollbar {
+            width: 10px;
+        }
+        .ctr-wrapper::-webkit-scrollbar-track {
+            background-color: lavender;
+        }
+        .ctr-wrapper::-webkit-scrollbar-thumb {
+            background-color: rgba(132, 58, 58, 0.35);
+            border-radius: 9999px;
+            border: solid 2px lavender;
+        }
+
+        .ctr-lists::-webkit-scrollbar{
+            height: 14px;
+        }
+        .ctr-lists::-webkit-scrollbar-track {
+            background-color: lavender;
+        }
+        .ctr-lists::-webkit-scrollbar-thumb {
+            background-color: rgba(132, 58, 58, 0.35);
+            border-radius: 9999px;
+            border: solid 4px lavender;
+        }
+
+        
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: lavender;
+
+            height: 100vh;
+            width: 100vw;
+        }
+        .filler {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            min-height: 50px;
+            padding: 1.2vw 0; 
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+            text-indent: 6vw;
+            
+            border: solid 0;
+        }
+        .ctr-wrapper {
+            position: static;
+            z-index: auto;
+
+            display: block;
+
+            height: 100vh;
+            width: 100vw;
+
+            overflow-y: scroll;
+        }
+        .ctr-h {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            min-height: 50px;
+            padding: 1.2vw 0; 
+
+            font-family: "mochiy_pop_one";
+            font-size: 1.1em;
+            text-indent: 6vw;
+            text-shadow: 2px 2px 1px rgb(75, 75, 75);
+            letter-spacing: 2px;
+            
+            border: solid 0;
+            border-radius: 9999px 0 0 9999px;
+
+            background-color: rgba(132, 58, 58, 0.35);
+            color: white;
+            
+        }
+        .ctr-lists {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            padding: 1.2vw 0;
+            overflow-x: scroll;
+
+            border: solid 0;
+        }
+        .ctr-list {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 20vw;
+            aspect-ratio: 1/1;
+            min-width: 100px;
+            max-width: 130px;
+            min-height: 100px;
+            max-height: 130px;
+            margin: 10px;
+            transition: transform .2s ease;
+            
+            visibility: hidden;
+            border: solid 0;
+
+            transform: scale(1);
+        }
+        .manifest-ctr-list {
+            visibility: visible;
+
+        }
+        .ctr-vlist {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            aspect-ratio: 16/9;
+
+            height: 100%;
+            
+            content-visibility: auto;
+            object-fit: cover;
+
+        }
+
+        .sd-pg {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: clamp(-100vw,-40vw,-300px);
+            /* right: 0; */
+
+            display: block;
+
+            width: 40vw;
+            min-width: 300px;
+            height: 100vh;
+            background-color: aliceblue;
+            overflow: visible;
+
+            /* transition: all .5s ease; */
+        }
+        .sd-btn {
+            position: absolute;
+            z-index: auto;
+            top: 0;
+            right: clamp(300px,40vw,100vw);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(2.4vw);
+            height: calc(2.4vw);
+            font-size: 1.7em;
+            font-weight: 1000;
+            font-family: Arial, Helvetica, sans-serif;
+            min-width: 50px;
+            min-height: 50px;
+
+            color: black;
+            border: solid 1px black;
+            border-radius: 0 0 0 30%;
+        }
+        .sd-wrapper {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            overflow: scroll;
+            height: 100vh;
+        }
+        .visual {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            aspect-ratio: 16/9;
+            border: solid 1px black;
+            margin: 10px auto;
+            width: calc(100% - 20px);
+            background-color: rgb(0, 0, 0);
+            
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+        }
+        .media {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            aspect-ratio: 16/9;
+
+            height: 100%;
+        }
+        .playlist {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px;
+            height: 2.5vw;
+            min-height: 50px;
+
+            border: solid 1px black;
+        }
+        .playlist-icon {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+
+            border: solid 1px black;
+        }
+        .playlist-holder {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            flex-grow: 2;
+
+            border: solid 1px black;
+            border-radius: 2px;
+        }
+        .playlist-holder,.playlist-icon {
+            margin: 10px;
+
+        }
+        .playlist-title {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .7em;
+            width: 100%;
+            text-align: center;
+        }
+        .player {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            border: solid 1px black;
+            margin: 10px;
+            padding: 1.2vw 0; 
+        }
+        .curr-plyr {
+            position: absolute;
+            z-index: auto;
+            bottom: 0;
+            right: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 2.5vw;
+            min-height: 50px;
+
+            border: solid 1px black;
+            background-color: rgb(208, 216, 240);
+        }
+        .curr-icon , .curr-pause{
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: stretch;
+            height: 90%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        .curr-pause {
+            font-size: 1.1em;
+            font-weight: 1000;
+            font-family: Arial, Helvetica, sans-serif;
+
+            border-radius: 10px;
+            border: solid 1px black;
+        }
+        .range-title {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            flex-grow: 2;
+
+            border: solid 1px black;
+            border-radius: 2px;
+        }
+        .curr-icon,.range-title,.curr-pause {
+            margin: 10px;
+        }
+        .range {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            width: 100%;
+        }
+        .title {
+            position: static;
+            z-index: auto;
+
+            display: block;
+            
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .7em;
+            width: 100%;
+            text-align: center;
+        }
+        .plist-add {
+            position: absolute;
+            z-index: auto;
+            top: 0;
+            right: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 20px;
+            min-width: 20px;
+            max-height: 26px;
+            max-width: 26px;
+
+            color: white;
+            background-color: rgba(190, 119, 207, .4);
+
+            text-shadow: 1px 1px 1px black;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+        }
+        .banner {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-list {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100vw;
+            min-height: 100px;
+            max-height: 150px;
+            
+            object-fit: contain;
+            
+            background-image: url("https://yt3.ggpht.com/gRWIEeNv23VNjMYXEcmf8Ob5YLz7iQs3rLPMJN7TacIyhpTsrJS_B1Zw8hfMP95cJf4XtgoS=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-attachment: local;
+            background-color: antiquewhite;
+            
+        }
+        
+        @keyframes sd-btn {
+            0% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes sd_in {
+            from {
+                right: 0;
+            }
+            to {
+                right: clamp(-100vw,-40vw,-300px);
+            }
+        }
+        @keyframes sd_out {
+            from {
+                right: clamp(-100vw,-40vw,-300px);
+            }
+            to {
+                right: 0;
+            }
+        }

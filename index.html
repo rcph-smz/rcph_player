@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./Character-CrimsonAbyss-Portrait.webp">
+    <script src="./app.js" async defer></script>
+</head>
+<body>
+    <div class="sd-pg">
+        <div class="visual">
+            <video class="media" poster="Character-CrimsonAbyss-Portrait.webp"></video>
+        </div>
+        <div class="sd-wrapper">
+
+        </div>
+        <div class="sd-btn">
+            ☰
+        </div>
+        <div class="curr-plyr">
+            <video class="curr-icon" poster="./Character-CrimsonAbyss-Portrait.webp"></video>
+            <div class="range-title">
+                <div class="title">&lt; please choose audio &gt;</div>
+                <!-- <input type="range" value="0" max="100" class="range"> -->
+            </div>
+            <!-- <img src="./icon/play.png" alt="" class="curr-pause"> -->
+            <div class="curr-pause">></div>
+        </div>
+    </div>
+    <div class="ctr-wrapper" style="display: none;">
+        <div class="banner">
+            <img src="./Character-CrimsonAbyss-Portrait.webp" alt="" class="banner-list">
+        </div>
+        <!-- <div class="filler">
+
+        </div> -->
+    </div>
+    <style>
+        .fl-wrapper {
+            position: static;
+            z-index: auto;
+
+            display: block;
+
+            height: 100vh;
+            width: 100vw;
+
+            overflow-y: scroll;
+
+            background-color: lavenderblush;
+        }
+        .fl-list {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 10px;
+
+            border: solid 1px black;
+        }
+        .fl-icon-ctr , .fl-option {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            aspect-ratio: 1/1;
+            
+            max-width: 70px;
+            max-height: 70px;
+
+            flex-grow: 1;
+            flex-shrink: 2;
+
+            border: solid 1px black;
+        }
+        .fl-icon {
+            position: static;
+            z-index: auto;
+
+            display: block;
+
+            height: 100%;
+            
+            content-visibility: auto;
+            object-fit: cover;
+        }
+        .fl-title {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            
+            margin: 10px;
+            max-height: 70px;
+            flex-grow: 2;
+
+            border: solid 1px black;
+        }
+    </style>
+    <div class="fl-wrapper">
+        <div class="fl-list">
+            <div class="fl-icon-ctr">
+                <video src="./MaidCat/[Blue Archive] Theme 109.mp4" class="fl-icon"></video>
+            </div>
+            <div class="fl-title">
+                hi
+            </div>
+            <div class="fl-option">
+                >
+            </div>
+        </div>
+    </div>
+</body>
+</html>

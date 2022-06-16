@@ -1,0 +1,31 @@
+- add shadow effects to those container
+
+- add two wrapper - file mode and container mode
+
+- when ctr was hovered play the video , then when hovered out back into currentTime = 10
+
+goal: when the user click the plus(+) sign it will add to playlist, but if he/she click the ctr it will play directly.
+
+- add override button , when override is "on/true", the player dont care(it will not pause) either you play other audio/video in other application
+
+- when icon ciick, go to document.querySelector(".media")
+
+- give a path example : "MaidCat"
+
+- add document.readyState = "complete" to initialized document
+
+- add preload-poster = "lucia"
+
+- delay_content to delay video load
+
+- intersection possible ctr to make website faster
+
+- add ripple effect
+
+- create object that will store your previous interaction. 
+    for example : 
+        - it will store your playlist 
+        - it will store the custom function that you add (ctr_template_scroller,add_filler)
+
+- add feature that can repeat the certain time for example:
+    - play only from 10seconds to 30seconds
