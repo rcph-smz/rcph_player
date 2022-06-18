@@ -416,6 +416,22 @@
         // range.addEventListener("timeupdate",thumb_status)
         curr_player.addEventListener("click",audio_status)
         sd_btn.addEventListener("click",sd_switch)
+        
+        window.addEventListener("keyup",(e) => {
+            if(e.keyCode == "32"){
+                audio_status()
+            }
+            if(e.keyCode == "37"){
+                goAt(currentAudio.currentTime - 10)
+            }
+            if(e.keyCode == "39"){
+                goAt(currentAudio.currentTime + 10)
+            }
+            if(e.keyCode == "73") {
+                sd_switch()
+            }
+            console.log(e.keyCode)
+        })
 
         ctr_template_scroller([
             "f(x) - 4 Walls (Zekk Remix).mp4",
