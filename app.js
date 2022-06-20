@@ -11,6 +11,7 @@
         const sd_pg = document.querySelector(".sd-pg")
         const sd_btn = document.querySelector(".sd-btn")
         const sd_view = document.querySelector(".sd-view")
+        const sd_search = document.querySelector(".sd-search")
         const sd_wrapper = document.querySelector(".sd-wrapper")
 
         const curr_icon = document.querySelector(".curr-icon")
@@ -438,6 +439,49 @@
         sd_btn.addEventListener("click",sd_switch)
         sd_view.addEventListener("click",view_mode)
 
+        //still optional
+        sd_search.addEventListener("keyup",(e) => {
+            const vlist = document.querySelectorAll(".ctr-vlist")
+            const fl_icon = document.querySelectorAll(".fl-icon")
+            console.log(vlist.length)
+            for(i of vlist){
+                curr_src = i.currentSrc
+                try {
+                    if(decodeURI(curr_src.split("/")[curr_src.split("/").length - 1]).trim().toLowerCase().includes(e.target.value.trim().toLowerCase())){
+                        i.parentElement.style.display = "flex"
+                    }
+                    else {
+                        i.parentElement.style.display = "none"
+                    }
+                } catch(err){
+                    if(curr_src.split("/")[curr_src.split("/").length - 1].trim().toLowerCase().includes(e.target.value.trim().toLowerCase())){
+                        i.parentElement.style.display = "flex"
+                    }
+                    else {
+                        i.parentElement.style.display = "none"
+                    }
+                }
+            }
+            for(i of fl_icon){
+                curr_src = i.currentSrc
+                try {
+                    if(decodeURI(curr_src.split("/")[curr_src.split("/").length - 1]).trim().toLowerCase().includes(e.target.value.trim().toLowerCase())){
+                        i.parentElement.parentElement.style.display = "flex"
+                    }
+                    else {
+                        i.parentElement.parentElement.style.display = "none"
+                    }
+                } catch(err){
+                    if(curr_src.split("/")[curr_src.split("/").length - 1].trim().toLowerCase().includes(e.target.value.trim().toLowerCase())){
+                        i.parentElement.parentElement.style.display = "flex"
+                    }
+                    else {
+                        i.parentElement.parentElement.style.display = "none"
+                    }
+                }
+            }
+        })
+
         window.addEventListener("keyup",(e) => {
             if(e.keyCode == "32"){
                 audio_status()
@@ -453,6 +497,7 @@
             }
         })
 
+        add_filler()
         ctr_template_scroller([
             "f(x) - 4 Walls (Zekk Remix).mp4",
 "greyl - Trendy.mp4",
