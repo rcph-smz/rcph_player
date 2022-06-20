@@ -162,7 +162,8 @@
             position: static;
             z-index: auto;
 
-            display: block;
+            /* this will be display: block; at javascript statement */
+            display: none;
 
             height: 100vh;
             width: 100vw;
@@ -295,6 +296,32 @@
             color: black;
             border: solid 1px black;
             border-radius: 0 0 0 30%;
+        }
+        .sd-view {
+            position: absolute;
+            z-index: auto;
+            top: clamp(50px,2.4vw,100vw);
+            right: clamp(300px,40vw,100vw);
+
+            /* display: flext; at javascript */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: calc(2.4vw);
+            height: calc(2.4vw);
+            font-size: 1.7em;
+            font-weight: 1000;
+            font-family: Arial, Helvetica, sans-serif;
+            min-width: 50px;
+            min-height: 50px;
+
+            background-color: rgba(240, 248, 255, 0.419);
+
+            color: lavenderblush;
+            text-shadow: 1px 1px 1px black;
+            border: solid 1px aliceblue;
+            box-shadow: 1px 1px 1px black;
+            border-radius: 30% 0 0 30%;
         }
         .sd-wrapper {
             position: static;

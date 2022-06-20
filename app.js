@@ -2,11 +2,15 @@
         let pathList = []
         let currentPlay = null
         let currentAudio = new Audio()
+        
+        const ctr_wrapper = document.querySelector(".ctr-wrapper")
+        const fl_wrapper = document.querySelector(".fl-wrapper")
 
         const media = document.querySelector(".media")
 
         const sd_pg = document.querySelector(".sd-pg")
         const sd_btn = document.querySelector(".sd-btn")
+        const sd_view = document.querySelector(".sd-view")
         const sd_wrapper = document.querySelector(".sd-wrapper")
 
         const curr_icon = document.querySelector(".curr-icon")
@@ -403,6 +407,7 @@
                 sd_btn.textContent = "X"
                 sd_btn.style.animation = "sd-btn .5s"
                 sd_pg.style.animation = "sd_out .5s forwards"
+                sd_view.style.display = "flex"
             }
             else {
                 // sd_pg.style.right = "clamp(-100vw,-40vw,-300px)"
@@ -410,13 +415,29 @@
                 sd_btn.textContent = "☰"
                 sd_btn.style.animation = "sd-btn .5s"
                 sd_pg.style.animation = "sd_in .5s forwards"
+                sd_view.style.display = "none"
+
+            }
+        }
+        let view_option = true
+        function view_mode() {
+            if(view_option){
+                ctr_wrapper.style.display = "none"
+                fl_wrapper.style.display = "block"
+                view_option = false
+            }
+            else if(!view_option){
+                ctr_wrapper.style.display = "block"
+                fl_wrapper.style.display = "none"
+                view_option = true
             }
         }
 
         // range.addEventListener("timeupdate",thumb_status)
         curr_player.addEventListener("click",audio_status)
         sd_btn.addEventListener("click",sd_switch)
-        
+        sd_view.addEventListener("click",view_mode)
+
         window.addEventListener("keyup",(e) => {
             if(e.keyCode == "32"){
                 audio_status()
@@ -430,7 +451,6 @@
             if(e.keyCode == "73") {
                 sd_switch()
             }
-            console.log(e.keyCode)
         })
 
         ctr_template_scroller([
