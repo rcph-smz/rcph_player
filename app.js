@@ -13,6 +13,8 @@
         const sd_view = document.querySelector(".sd-view")
         const sd_search = document.querySelector(".sd-search")
         const sd_wrapper = document.querySelector(".sd-wrapper")
+        const sd_option = document.querySelector(".sd-option")
+        const sd_opt_trig = document.querySelector(".sd-opt-trig")
 
         const curr_icon = document.querySelector(".curr-icon")
         const curr_player = document.querySelector(".curr-pause")
@@ -400,44 +402,60 @@
         function random_int(min,max) {
             return Math.floor(Math.random() * (max - min)) + min
         }
-        let sd_option = true
+        let sd_sw = true
         function sd_switch() {
-            if(sd_option){
+            if(sd_sw){
                 // sd_pg.style.right = 0
-                sd_option = false
+                sd_sw = false
                 sd_btn.textContent = "X"
                 sd_btn.style.animation = "sd-btn .5s"
                 sd_pg.style.animation = "sd_out .5s forwards"
                 sd_view.style.display = "flex"
+                sd_opt_trig.style.display = "flex"
             }
             else {
                 // sd_pg.style.right = "clamp(-100vw,-40vw,-300px)"
-                sd_option = true
+                sd_sw = true
                 sd_btn.textContent = "☰"
                 sd_btn.style.animation = "sd-btn .5s"
                 sd_pg.style.animation = "sd_in .5s forwards"
                 sd_view.style.display = "none"
-
+                sd_opt_trig.style.display = "none"
             }
         }
-        let view_option = true
+        let view_md = true
         function view_mode() {
-            if(view_option){
+            if(view_md){
                 ctr_wrapper.style.display = "none"
                 fl_wrapper.style.display = "block"
-                view_option = false
+                view_md = false
             }
-            else if(!view_option){
+            else {
                 ctr_wrapper.style.display = "block"
                 fl_wrapper.style.display = "none"
-                view_option = true
+                view_md = true
             }
         }
+        let view_opt = true
+        function view_option() {
+            if(view_opt){
+                sd_wrapper.style.display = "none"
+                sd_option.style.display = "block"
+                view_opt = false
+            }
+            else {
+                sd_wrapper.style.display = "block"
+                sd_option.style.display = "none"
+                view_opt = true
+            }
+        }
+
 
         // range.addEventListener("timeupdate",thumb_status)
         curr_player.addEventListener("click",audio_status)
         sd_btn.addEventListener("click",sd_switch)
         sd_view.addEventListener("click",view_mode)
+        sd_opt_trig.addEventListener("click",view_option)
 
         //still optional
         sd_search.addEventListener("keyup",(e) => {

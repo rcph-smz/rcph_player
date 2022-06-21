@@ -43,6 +43,20 @@
             border: solid 2px lavender;
         }
 
+        .sd-wrapper::-webkit-scrollbar , .sd-option::-webkit-scrollbar{
+            width: 10px;
+        }
+        .sd-wrapper::-webkit-scrollbar-track ,.sd-option::-webkit-scrollbar-track{
+            background-color: lavender;
+        }
+        .sd-wrapper::-webkit-scrollbar-thumb ,.sd-option::-webkit-scrollbar-thumb{
+            background-color: rgba(132, 58, 58, 0.35);
+            border-radius: 9999px;
+            border: solid 2px lavender;
+        }
+
+        
+
         * {
             padding: 0;
             margin: 0;
@@ -352,14 +366,50 @@
             box-shadow: 1px 1px 1px rgb(226, 175, 200);
             border-radius: 9999px;
         }
-        .sd-wrapper {
+        .sd-opt-trig {
+            position: absolute;
+            z-index: auto;
+            top: clamp(100px,2.4vw,100vw);
+            right: clamp(300px,40vw,100vw);
+
+            /* display: flext; at javascript */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: calc(2.4vw);
+            height: calc(2.4vw);
+            font-size: 1.7em;
+            font-weight: 1000;
+            font-family: Arial, Helvetica, sans-serif;
+            min-width: 50px;
+            min-height: 50px;
+
+            background-color: rgba(240, 248, 255, 0.419);
+
+            color: lavenderblush;
+            text-shadow: 1px 1px 1px black;
+            border: solid 1px aliceblue;
+            box-shadow: 1px 1px 1px black;
+            border-radius: 30% 0 0 30%;
+        }
+
+        .sd-wrapper  {
             position: static;
             z-index: auto;
 
             display: block;
-            overflow: scroll;
-            height: 100vh;
+            overflow-y: scroll;
+            height: calc((100% - clamp(50px,2.5vw,100%)) - (clamp(300px,40vw,100%) * 0.5625));
         }
+        .sd-option {
+            position: static;
+            z-index: auto;
+
+            display: none;
+            overflow-y: scroll;
+            height: calc((100% - clamp(50px,2.5vw,100%)) - (clamp(300px,40vw,100%) * 0.5625));
+        }
+        
         .visual {
             position: static;
             z-index: auto;

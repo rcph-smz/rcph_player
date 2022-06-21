@@ -33,3 +33,5 @@ goal: when the user click the plus(+) sign it will add to playlist, but if he/sh
 - add feature where you can add youtube video links through embed tag
 
 - use the pixel width(innerWidth or else) to immitate <input type="range">
+
+- add option to change volume function
