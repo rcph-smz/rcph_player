@@ -1,5 +1,4 @@
-# add _ ctr example
-- ctr_template_scroller([
+ctr_template_scroller([
 "%E3%80%90%E5%B7%A1%E9%9F%B3%E3%83%AB%E3%82%AB%E3%80%91___%E3%81%A9%E3%82%8A%E3%83%BC%E3%81%BF%E3%82%93%E3%83%81%E3%83%A5%E3%83%81%E3%83%A5___Dreamin_Chuchu___by_emon_%E3%80%90MEGURINE_LUKA%E3%80%91(720p).mp4",
 "%5BFULL%5DCentimeter_-_Kanojo%2C_Okarishimasu_Rent-a-Girlfriend_OP___the_peggies__piano_(1080p).mp4",
 "%E3%80%904K%E3%80%91%E3%81%A9%E3%82%8A%E3%83%BC%E3%81%BF%E3%82%93%E3%83%81%E3%83%A5%E3%83%81%E3%83%A5___Dreamin_Chuchu_cover.%E9%B9%BF%E4%B9%83(480p).mp4",
@@ -357,8 +356,9 @@
 "💳💸_sakehands_-_PLASTIC_ft._Good_Intent_中英文歌詞_Lyrics(720p).mp4",
 "不登校のあなたへ(1080p).mp4",
 "米津玄師__MV「Lemon」(1080p).mp4"
-],"D:/nyahn_collection/nyeow","new file()")
-- ctr_template_scroller([
+],"D:/nyahn_collection/nyeow","nyeow")
+
+ctr_template_scroller([
 "Bad Computer & Danyka Nadeau - Chasing Clouds.mp4",
 "DoctorNoSense - Safe to Say (Official Audio).mp4",
 "Day by Day (feat Nicole Curry).mp4",
@@ -431,8 +431,10 @@
 "高尾大毅 - Dont be afraid.mp4",
 "べに／可不.mp4"
 
-],"D:/nyahn_collection/nyahn")
-- ctr_template_scroller([
+],"D:/nyahn_collection/nyahn","nyahn")
+
+
+ctr_template_scroller([
 "Broken Light (feat mami).mp4",
 "Best of Kawaii Pop 2020 Mix (J-Pop Future Core) by Appu.mp4",
 "Future BassFuture Core Mix  Welcome to the Future.mp4",
@@ -471,4 +473,4 @@
 "PSYQUI featSuch - C & B.mp4",
 "まさらPmasara - Love10 (ft Juunana & Ran).mp4",
 "YUCe - Night Club Junkie.mp4"
-],"D:/nyahn_collection/nyahn/yt_dl/MaidCat")
+],"D:/nyahn_collection/nyahn/yt_dl/MaidCat","MaidCat")
