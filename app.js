@@ -457,11 +457,13 @@
         sd_view.addEventListener("click",view_mode)
         sd_opt_trig.addEventListener("click",view_option)
 
+        sd_switch()
+        view_option()
+
         //still optional
         sd_search.addEventListener("keyup",(e) => {
             const vlist = document.querySelectorAll(".ctr-vlist")
             const fl_icon = document.querySelectorAll(".fl-icon")
-            console.log(vlist.length)
             for(i of vlist){
                 curr_src = i.currentSrc
                 try {
