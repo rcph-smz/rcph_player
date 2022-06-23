@@ -234,6 +234,27 @@
                 }
             }
         }
+        function add_banner(file_path,obj_pos_x,obj_pos_y) {
+            const banner = document.createElement("div")
+            banner.setAttribute("class","banner")
+
+            const banner_list = document.createElement("img")
+            banner_list.setAttribute("class","banner-list")
+            banner_list.src = file_path.toString()
+            if((parseFloat(obj_pos_x) && parseFloat(obj_pos_y))){
+                const multiplier = 100
+                banner_list.style.objectPosition = `${parseFloat(obj_pos_x * multiplier)}% ${parseFloat(obj_pos_y * multiplier)}% `
+            }
+            
+            banner.appendChild(banner_list)
+
+            const body = document.body
+            for(bchild of body.children){
+                if(bchild.getAttribute("class") == "ctr-wrapper"){
+                    bchild.appendChild(banner)
+                }
+            }
+        }
         function ctr_template_scroller(lists,path,caption) {
             if(!caption) caption = path
             add_ctr_h(caption)
@@ -457,8 +478,8 @@
         sd_view.addEventListener("click",view_mode)
         sd_opt_trig.addEventListener("click",view_option)
 
-        sd_switch()
-        view_option()
+        // sd_switch()
+        // view_option()
 
         //still optional
         sd_search.addEventListener("keyup",(e) => {
@@ -516,7 +537,8 @@
                 sd_switch()
             }
         })
-
+        
+        add_banner("https://wallpaperaccess.com/full/628286.jpg",".5",".7")
         add_filler()
         ctr_template_scroller([
             "f(x) - 4 Walls (Zekk Remix).mp4",
