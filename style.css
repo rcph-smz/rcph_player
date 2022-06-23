@@ -184,7 +184,7 @@
 
             overflow-y: scroll;
 
-            background-color: lavenderblush;
+            background-color: lavender;
         }
         .fl-list {
             position: static;
@@ -196,7 +196,8 @@
 
             margin: 10px;
 
-            border: solid 1px black;
+            border: solid 1px rgba(132, 58, 58, 0.2);
+            border-radius: 10px 0 10px 0;
         }
         .fl-icon-ctr {
             position: static;
@@ -214,7 +215,8 @@
             flex-grow: 1;
             flex-shrink: 2;
 
-            border: solid 1px black;
+            border: solid 1px 0;
+            border-radius: 10px 0 10px 0;
         }
         .fl-option {
             position: static;
@@ -236,7 +238,9 @@
             font-weight: 700;
             font-size: .9em;
 
-            border: solid 1px black;
+            color: rgba(132, 58, 58, .9);
+            text-shadow: 2px 2px 1px lavenderblush;
+            border: solid 1px rgba(132, 58, 58, 0.35);
         }
         .fl-icon {
             position: static;
@@ -268,9 +272,13 @@
             font-weight: 700;
             font-size: .7em;
             text-align: center;
+            text-shadow: 2px 2px 1px rgb(75, 75, 75);
             overflow: hidden;
 
-            border: solid 1px black;
+            background-color: rgba(132, 58, 58, 0.35);
+            color: lavender;
+            border: solid 1px 0;
+            border-radius: 10px 0 10px 0;
         }
 
         .sd-pg {
@@ -615,6 +623,24 @@
             /* object-position at javascript */
             object-position: 50% 70%;
             background-color: lavender;
+        }
+        .ripple-effect {
+            position: fixed;
+            z-index: 2;
+
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+        }
+        @keyframes ripple-effect {
+            from {
+                height: 0;
+                width: 0;
+            }
+            to {
+                height: 2500px;
+                width: 2500px;
+            }
         }
         
         @keyframes sd-btn {

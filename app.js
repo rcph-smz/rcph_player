@@ -522,7 +522,23 @@
                 }
             }
         })
+        function ripple_effect(e) {
+            const ripple = document.createElement("span")
+            ripple.setAttribute("class","ripple-effect")
+            ripple.style.top = `${e.clientY}px`
+            ripple.style.left = `${e.clientX}px`
+            ripple.style.background = `rgba(${random_int(0,255)},${random_int(0,255)},${random_int(0,255)},.1)`
+            ripple.style.animation = "ripple-effect 1s ease"
 
+            const body = document.body
+            body.appendChild(ripple)
+            setTimeout(() => {
+                ripple.remove()
+            }, 1000);
+        }
+        window.addEventListener("click",(e) => {
+            ripple_effect(e)
+        })
         window.addEventListener("keyup",(e) => {
             if(e.keyCode == "32"){
                 audio_status()
@@ -537,7 +553,7 @@
                 sd_switch()
             }
         })
-        
+
         add_banner("https://wallpaperaccess.com/full/628286.jpg",".5",".7")
         add_filler()
         ctr_template_scroller([
