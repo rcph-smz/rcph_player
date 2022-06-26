@@ -24,9 +24,14 @@
         const playlist_icon = document.querySelector(".playlist-icon")
         const playlist_holder = document.querySelector(".playlist-holder")
         
-        let plist_type = ["default","random"]
+        let plist_option = ["default","random","reverse"]
         let plist_bhv = {
             "type" : "random"
+        }
+
+        //still not done
+        function switch_bhv(option) {
+            plist_bhv.type = option.toString()
         }
 
         async function plist_promise() {
@@ -35,7 +40,7 @@
                 const pathdata = sd_wrapper.children[0].children[0].currentSrc.split("/")
                 const rd_pathdata = sd_wrapper.children[rd_sync].children[0].currentSrc.split("/")
                 
-                if(currentAudio.ended && plist_bhv.type == plist_type[0] && plist_vl[0] != undefined){
+                if(currentAudio.ended && plist_bhv.type == plist_option[0] && plist_vl[0] != undefined){
                     for(data of pathList){
                         for(let k = 0; k < data[1].length; ++k){
                             if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[0]}` && decodeURI(plist_vl[0]) == decodeURI(pathdata[pathdata.length - 1])){
@@ -53,7 +58,7 @@
                         }
                     }
                 }
-                if(currentAudio.ended && plist_bhv.type == plist_type[1] && plist_vl[rd_sync] != undefined){
+                if(currentAudio.ended && plist_bhv.type == plist_option[1] && plist_vl[rd_sync] != undefined){
                     for(data of pathList){
                         for(let k = 0; k < data[1].length; ++k){
                             if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[rd_sync]}` && decodeURI(plist_vl[rd_sync]) == decodeURI(rd_pathdata[rd_pathdata.length - 1])){
