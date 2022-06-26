@@ -27,6 +27,15 @@ goal: when the user click the plus(+) sign it will add to playlist, but if he/sh
         - it will store your playlist 
         - it will store the custom function that you add (ctr_template_scroller,add_filler)
 
+    to use preference :
+        localStorage:
+            - localStorage.set("preference",preference)
+            - localStorage.get("preference")
+            - localStorage.removeItem("preference")
+        and vice versa in :
+            - cookie
+            
+
 - add feature that can repeat the certain time for example:
     - play only from 10seconds to 30seconds
 

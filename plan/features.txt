@@ -1,0 +1,9 @@
+- default playlist : default
+- random playlist : play random music in playlist (splice)
+- override play : ignore third party sounds
+- store preference 
+- embed youtube video
+- change volume function
+- recently play : display recent play
+- add <code> </code> tag : to store some function/commands
+- add progress bar
