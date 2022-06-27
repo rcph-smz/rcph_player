@@ -634,6 +634,54 @@
             transform: translate(-50%,-50%);
             pointer-events: none;
         }
+        .plist-bhv-wrapper {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            border: solid 1px black;
+            margin: 10px;
+        }
+        .plist-bhv-label {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: solid 1px black;
+            margin: 10px;
+
+            flex-grow: 2;
+            width: 0;
+
+            max-height: 50px;
+            min-height: 50px;
+        }
+        .plist-bhv-prev , .plist-bhv-next {
+            position: static;
+            z-index: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: solid 1px black;
+            margin: 10px;
+
+            max-height: 50px;
+            min-height: 50px;
+            max-width: 50px;
+            max-height: 50px;
+            aspect-ratio: 1/1;
+            
+        }
         @keyframes ripple-effect {
             from {
                 height: 0;

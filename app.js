@@ -513,7 +513,7 @@
         sd_opt_trig.addEventListener("click",view_option)
 
         sd_switch()
-        // view_option()
+        view_option()
 
         //still optional
         sd_search.addEventListener("keyup",(e) => {
