@@ -6,7 +6,7 @@
             font-family: "hachi_maru_pop";
             src: url("./font/Hachi_Maru_Pop/HachiMaruPop-Regular.ttf");
         }
-    
+
         .ctr-wrapper::-webkit-scrollbar {
             width: 10px;
         }
@@ -315,8 +315,13 @@
             min-width: 50px;
             min-height: 50px;
 
-            color: black;
-            border: solid 1px black;
+            background-color: rgba(240, 248, 255, 0.419);
+
+            color: lavenderblush;
+            text-shadow: 1px 1px 1px black;
+            border: solid 1px aliceblue;
+            box-shadow: 1px 1px 1px black;
+            
             border-radius: 0 0 0 30%;
         }
         .sd-view {
@@ -452,7 +457,8 @@
             height: 2.5vw;
             min-height: 50px;
 
-            border: solid 1px black;
+            border: solid 1px rgba(132, 58, 58, 0.35);
+            border-radius: 10px 0 10px 0;
         }
         .playlist-icon {
             position: static;
@@ -465,7 +471,7 @@
             aspect-ratio: 1/1;
             object-fit: cover;
 
-            border: solid 1px black;
+            border: solid 1px 0;
         }
         .playlist-holder {
             position: static;
@@ -479,12 +485,11 @@
             width: 0;
             flex-grow: 2;
 
-            border: solid 1px black;
-            border-radius: 2px;
+            border: solid 1px rgba(132, 58, 58, 0.4);
+            border-radius: 10px 0 10px 0;
         }
-        .playlist-holder,.playlist-icon {
+        .playlist-holder, .playlist-icon {
             margin: 10px;
-
         }
         .playlist-title {
             position: static;
@@ -496,6 +501,7 @@
             font-size: .7em;
             width: 100%;
             text-align: center;
+            color: rgb(40, 36, 36);
         }
         .player {
             position: static;
@@ -519,7 +525,7 @@
             height: 2.5vw;
             min-height: 50px;
 
-            border: solid 1px black;
+            border: solid 1px 0;
             background-color: rgb(208, 216, 240);
         }
         .curr-icon , .curr-pause{
@@ -540,7 +546,9 @@
             font-family: Arial, Helvetica, sans-serif;
 
             border-radius: 10px;
-            border: solid 1px black;
+            color: rgba(132, 58, 58, 0.7);
+            text-shadow: 1px 1px 2px lavenderblush;
+            border: solid 2px rgba(132, 58, 58, 0.35);
         }
         .range-title {
             position: static;
@@ -550,12 +558,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-grow: 2;
+            
             height: 90%;
             width: 0;
-            flex-grow: 2;
 
-            border: solid 1px black;
+            border: solid 1px 0;
             border-radius: 2px;
+            background-color: rgba(132, 58, 58, 0.35);
+            color: lavender;
+            text-shadow: 1px 1px 1px rgb(98, 98, 98);
         }
         .curr-icon,.range-title,.curr-pause {
             margin: 10px;
@@ -644,7 +656,7 @@
             flex-direction: row;
             flex-wrap: wrap;
 
-            border: solid 1px black;
+            border: dotted 1px #d3bfad;
             margin: 10px;
             
             height: 2.5vw;
@@ -657,14 +669,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            border: solid 1px black;
-
             flex-grow: 2;
+
+            background-color: rgba(132, 58, 58, 0.35);
+            color: white;
+
+            font-size: .9em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            text-shadow: 2px 2px 1px rgb(75, 75, 75);
+
             width: 0;
             margin: 0 5px;
-
             height: 90%;
+
+            border: solid 1px 0;
         }
         .plist-bhv-prev , .plist-bhv-next {
             position: static;
@@ -674,7 +693,16 @@
             justify-content: center;
             align-items: center;
 
-            border: solid 1px black;
+            border-radius: 50%;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: .9em;
+
+            color: rgba(132, 58, 58, .9);
+            text-shadow: 2px 2px 1px lavenderblush;
+            border: solid 1px rgba(132, 58, 58, 0.35);
+
             height: 90%;
             margin: 0 5px;
             aspect-ratio: 1/1;
