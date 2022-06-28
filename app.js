@@ -26,13 +26,36 @@
         
         let plist_option = ["default","random","reverse"]
         let plist_bhv = {
-            "type" : "random"
+            "type" : "default"
         }
 
-        //still not done
+        const plist_bhv_label = document.querySelector(".plist-bhv-label")
+        const plist_bhv_prev = document.querySelector(".plist-bhv-prev")
+        const plist_bhv_next = document.querySelector(".plist-bhv-next")
+        let bhv_range = 0
         function switch_bhv(option) {
             plist_bhv.type = option.toString()
+            plist_bhv_label.textContent = `mode : ${option}`
+            if(plist_option.indexOf(option) != bhv_range) {
+                bhv_range = plist_option.indexOf(option)
+            }
         }
+        function switch_bhv_prev() {
+            if(bhv_range > 0){
+                bhv_range -= 1
+                switch_bhv(plist_option[bhv_range])
+            }
+        }
+        function switch_bhv_next() {
+            if(bhv_range < plist_option.length - 1){
+                bhv_range += 1
+                switch_bhv(plist_option[bhv_range])
+            }
+        }
+
+        plist_bhv_prev.addEventListener("click",switch_bhv_prev)
+        plist_bhv_next.addEventListener("click",switch_bhv_next)
+        
 
         async function plist_promise() {
             try {
