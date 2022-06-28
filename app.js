@@ -611,7 +611,7 @@
             }
         })
 
-        add_banner("https://wallpaperaccess.com/full/628286.jpg",".5",".7")
+        add_banner("./banner/628286.webp",".5",".7")
         add_filler()
         ctr_template_scroller([
             "f(x) - 4 Walls (Zekk Remix).mp4",
