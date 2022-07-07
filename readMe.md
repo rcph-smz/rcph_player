@@ -13,5 +13,5 @@
 
 - [rcph_player_src](https://rcph-smz.github.io/rcph_player_src/)
 
-# any function that i didn't mention can be used but can be messy if you used those.
+##### this is pain :D
 

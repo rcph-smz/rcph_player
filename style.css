@@ -646,7 +646,7 @@
             transform: translate(-50%,-50%);
             pointer-events: none;
         }
-        .plist-bhv-wrapper {
+        .plist-bhv-wrapper , .plist-idle-wrapper {
             position: static;
             z-index: auto;
 
@@ -662,7 +662,7 @@
             height: 2.5vw;
             min-height: 50px;
         }
-        .plist-bhv-label {
+        .plist-bhv-label , .plist-idle-label{
             position: static;
             z-index: auto;
 
@@ -685,7 +685,7 @@
 
             border: solid 1px 0;
         }
-        .plist-bhv-prev , .plist-bhv-next {
+        .plist-bhv-prev , .plist-bhv-next , .plist-idle-prev , .plist-idle-next{
             position: static;
             z-index: auto;
 

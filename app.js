@@ -28,10 +28,19 @@
         let plist_bhv = {
             "type" : "default"
         }
+        let plist_idle_option = ["none","default","random","reverse"]
+        let plist_idle = {
+            "type" : "none"
+        }
 
         const plist_bhv_label = document.querySelector(".plist-bhv-label")
         const plist_bhv_prev = document.querySelector(".plist-bhv-prev")
         const plist_bhv_next = document.querySelector(".plist-bhv-next")
+        
+        const plist_idle_label = document.querySelector(".plist-idle-label")
+        const plist_idle_prev = document.querySelector(".plist-idle-prev")
+        const plist_idle_next = document.querySelector(".plist-idle-next")
+
         let bhv_range = 0
         function switch_bhv(option) {
             plist_bhv.type = option.toString()
@@ -52,21 +61,44 @@
                 switch_bhv(plist_option[bhv_range])
             }
         }
+        
+        let idle_range = 0
+        function switch_idle(option) {
+            plist_idle.type = option.toString()
+            plist_idle_label.textContent = `idle : ${option}`
+            if(plist_idle_option.indexOf(option) != idle_range) {
+                idle_range = plist_idle_option.indexOf(option)
+            }
+        }
+        function switch_idle_prev() {
+            if(idle_range > 0){
+                idle_range -= 1
+                switch_idle(plist_idle_option[idle_range])
+            }
+        }
+        function switch_idle_next() {
+            if(idle_range < plist_idle_option.length - 1){
+                idle_range += 1
+                switch_idle(plist_idle_option[idle_range])
+            }
+        }
 
         plist_bhv_prev.addEventListener("click",switch_bhv_prev)
         plist_bhv_next.addEventListener("click",switch_bhv_next)
+
+        plist_idle_prev.addEventListener("click",switch_idle_prev)
+        plist_idle_next.addEventListener("click",switch_idle_next)
+        
         
 
         async function plist_promise() {
             try {
                 const rd_sync = random_int(0,plist_vl.length)
-                const pathdata = sd_wrapper.children[0].children[0].currentSrc.split("/")
-                const rd_pathdata = sd_wrapper.children[rd_sync].children[0].currentSrc.split("/")
                 
                 if(currentAudio.ended && plist_bhv.type == plist_option[0] && plist_vl[0] != undefined){
                     for(data of pathList){
                         for(let k = 0; k < data[1].length; ++k){
-                            if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[0]}` && decodeURI(plist_vl[0]) == decodeURI(pathdata[pathdata.length - 1])){
+                            if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[0]}`){
                                     // preload_auto()
                                     sd_wrapper.children[0].children[0].preload = "auto"
 
@@ -77,6 +109,8 @@
                                     display_media()
                                     shift_playlist()
                                     console.log("plist promise end")
+
+                                    return
                             }
                         }
                     }
@@ -84,7 +118,7 @@
                 if(currentAudio.ended && plist_bhv.type == plist_option[1] && plist_vl[rd_sync] != undefined){
                     for(data of pathList){
                         for(let k = 0; k < data[1].length; ++k){
-                            if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[rd_sync]}` && decodeURI(plist_vl[rd_sync]) == decodeURI(rd_pathdata[rd_pathdata.length - 1])){
+                            if(`${data[0]}/${data[1][k]}` == `${data[0]}/${plist_vl[rd_sync]}`){
                                 // preload_auto()
                                 sd_wrapper.children[rd_sync].children[0].preload = "auto"
 
@@ -95,12 +129,61 @@
                                 display_media()
                                 splice_playlist(rd_sync)
                                 console.log("plist_random promise end")
+
+                                return
                             }
                         }
                     }
                 }
             } catch (err){
+
+            }
+            try {
+                const rd_sync = random_int(0,pathList.length)
                 
+                if(currentAudio.ended && plist_idle.type == plist_idle_option[1] && plist_vl.length == 0) {
+                    for(data of pathList){
+                        for(let k = 0; k < data[1].length; ++k){
+                            //copy this code : currentAudio.currentSrc.split("/").slice(0,currentAudio.currentSrc.split("/").length - 1).join("/")
+
+                            console.log(currentAudio.currentSrc.split("/")[currentAudio.currentSrc.split("/").length - 2],currentAudio.currentSrc.split("/").slice(0,currentAudio.currentSrc.split("/").length - 1).join("/"))
+                        
+                            if(`${data[0]}/${data[1][k]}` == `${data[0]}/${currentPlay}` && currentAudio.currentSrc.split("/")[currentAudio.currentSrc.split("/").length - 2] == data[0] && data.length != k){
+
+                                initialize_list(data[1][k + 1],data[0])
+                                await audio_play()
+                                display_title()
+                                await display_icon(data[1][k + 1],data[0])
+                                display_media()
+
+                                return
+                            } 
+                            else if(`${data[0]}/${data[1][k]}` == `${data[0]}/${currentPlay}` && currentAudio.currentSrc.split("/").slice(0,currentAudio.currentSrc.split("/").length - 1).join("/") == data[0] && data.length != k){
+
+                                initialize_list(data[1][k + 1],data[0])
+                                await audio_play()
+                                display_title()
+                                await display_icon(data[1][k + 1],data[0])
+                                display_media()
+
+                                return
+                            }
+                            
+                            // else if(`${data[0]}/${data[1][k]}` == `${data[0]}/${currentPlay}` && data.length == k) {
+
+                            //     initialize_list(pathList[rd_sync][1][random_int(0,pathList[rd_sync][1].length)],pathList[rd_sync][0])
+                            //     await audio_play()
+                            //     display_title()
+                            //     await display_icon(pathList[rd_sync][1][random_int(0,pathList[rd_sync][1].length)],pathList[rd_sync][0])
+                            //     display_media()
+
+                            //     return
+                            // }
+                        }
+                    }
+                }
+            } catch (err) {
+                console.log(err)
             }
         }
         setInterval(() => {
