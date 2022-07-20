@@ -2,6 +2,8 @@
         let pathList = []
         let currentPlay = null
         let currentAudio = new Audio()
+        let audio_volume = 1
+        let audio_minvolume = .5
         
         const ctr_wrapper = document.querySelector(".ctr-wrapper")
         const fl_wrapper = document.querySelector(".fl-wrapper")
@@ -210,6 +212,7 @@
                         ctr_vlist.setAttribute("class","ctr-vlist")
                         ctr_vlist.setAttribute("poster","Character-CrimsonAbyss-Portrait.webp")
                         ctr_vlist.currentTime = 10
+                        ctr_vlist.volume = .6
                         // ctr_vlist.src = `${path}/${list}`
                         // ctr_vlist.preload = "auto"
                         // ctr_vlist.muted = true
@@ -235,9 +238,13 @@
                         })  
                         function ctr_pointerover() {
                             if(innerWidth <= 400){
+                                volume_(audio_minvolume)
+
                                 ctr_vlist.play()
                             }
                             else {
+                                volume_(audio_minvolume)
+
                                 ctr_list.style.boxShadow = "4px 4px 4px rgb(180, 184, 227), -4px -4px 4px rgb(180, 184, 227),4px -4px 4px rgb(180, 184, 227),-4px 4px 4px rgb(180, 184, 227)"
                                 ctr_list.style.transform = "scale(1.2)"
 
@@ -246,10 +253,14 @@
                         }
                         function ctr_pointerleave() {
                             if(innerWidth <= 400){
+                                volume_(audio_volume)
+
                                 ctr_vlist.pause()
                                 ctr_vlist.currentTime = 10
                             }
                             else {
+                                volume_(audio_volume)
+
                                 ctr_list.style.boxShadow = ""
                                 ctr_list.style.transform = ""
                                 
@@ -611,6 +622,9 @@
                 sd_option.style.display = "none"
                 view_opt = true
             }
+        }
+        function volume_(amnt = 1) {
+            currentAudio.volume = amnt
         }
 
 
